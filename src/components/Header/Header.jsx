@@ -8,10 +8,8 @@ let Header = () => {
     return (
         <header className={sHeader.header}>
             <div className={'shoppingCart'}>
-                <a href={``}>
                     <div>корзина</div>
                     <img className={sHeader.shoppingCart__shoppingCartImg} src={shoppingCartLogo} alt='корзина покупок'/>
-                </a>
             </div>
         </header>
     );
