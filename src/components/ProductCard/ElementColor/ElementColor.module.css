@@ -1,0 +1,33 @@
+.activeElementColor {
+    border: 2px solid greenyellow ;
+}
+
+
+
+
+
+
+
+
+.elementsColor {
+    display: flex; /* Используем flex для горизонтального расположения */
+    flex-wrap: wrap; /* Позволяем элементам переноситься на следующую строку */
+    gap: 10px; /* Промежуток между элементами */
+    justify-content: center; /* Центрируем элементы по горизонтали */
+}
+
+.elementColor {
+    padding: 20px;
+    text-align: center;
+    display: flex; /* Используем flex для вертикального выравнивания */
+    flex-direction: column; /* Располагаем текст и цвет по вертикали */
+    align-items: center; /* Центрируем элементы по горизонтали */
+}
+
+.colorImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 5px;
+}

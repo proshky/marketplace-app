@@ -1,0 +1,32 @@
+.productImg {
+    width: 150px;
+    grid-area: img;
+
+}
+
+.productName {
+    grid-area: name;
+}
+
+
+.product {
+    align-items: center;
+    justify-content: center;
+    background-color: #282c34;
+
+
+    font-size: calc(10px + 2vmin);
+    color: white;
+    display: grid;
+    grid-template-areas:
+          ". img ."
+          ". name .";
+
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: minmax(200px, 10%)  5fr 3fr;
+
+}
+
+
+
+
