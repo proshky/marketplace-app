@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import ElementColorContainer from "./ElementColor/ElementColorContainer";
 import ElementSizeContainer from "./ElementSize/ElementSizeContainer";
 
-let ProductCard = ({activeSizeId, product, activeColorElement}) => {
+let ProductCard = ({activeElementSizes, activeSizeId, product, activeColorElement}) => {
     const [img, setImg] = useState(0);
 
     const handleNextImage = () => {
@@ -45,7 +45,7 @@ let ProductCard = ({activeSizeId, product, activeColorElement}) => {
                                 ? <div>цвет: {activeColorElement.name}</div>
                                 : <div></div>}
                         </div>
-                        <div>размер: </div>
+                        <div>размер: {Object.keys(activeElementSizes).length !== 0 ? <span> {activeElementSizes.find(size => activeSizeId==size.id).label}</span>: <div></div>}</div>
                         <div>
                             {activeColorElement
                                 ? <div>цена: {activeColorElement.price} р.</div>
@@ -57,5 +57,6 @@ let ProductCard = ({activeSizeId, product, activeColorElement}) => {
         </div>
     );
 }
+
 
 export default React.memo(ProductCard);

@@ -8,7 +8,7 @@ import {
     getColors,
     getActiveColorElement,
     getActiveColor,
-    getActiveSizeId
+    getActiveSizeId, getActiveElementSizes
 } from "../../redux/reducers/productCardReducer/productCardSelectors";
 import {getArrayProducts} from "../../redux/reducers/productsReducer/productsSelectors";
 import {
@@ -25,7 +25,7 @@ import {
 } from "../../redux/reducers/productCardReducer/productCardReducer";
 import {compose} from "redux";
 
-let ProductCardContainer = ({activeSizeId, getProductSizeThunk ,setProduct, getSizesAC, product, activeColorElement, setActiveColorElement, activeColor, setActiveColor, resetProductCardThunk, id,  setActiveSizeActionCreator, setProductIdActionCreator, resetActiveElementSizes}) => {
+let ProductCardContainer = ({activeElementSizes, activeSizeId, getProductSizeThunk ,setProduct, getSizesAC, product, activeColorElement, setActiveColorElement, activeColor, setActiveColor, resetProductCardThunk, id,  setActiveSizeActionCreator, setProductIdActionCreator, resetActiveElementSizes}) => {
 
 
 
@@ -78,6 +78,7 @@ let ProductCardContainer = ({activeSizeId, getProductSizeThunk ,setProduct, getS
     return (
         <div>
             <ProductCard
+                activeElementSizes={activeElementSizes}
                 activeSizeId={activeSizeId}
                 activeColorElement={activeColorElement}
                 product={product}
@@ -94,7 +95,8 @@ let mapStateToProps = (state) => ({
     colors: getColors(state),
     activeColor: getActiveColor(state),
     activeColorElement: getActiveColorElement(state),
-    activeSizeId: getActiveSizeId(state)
+    activeSizeId: getActiveSizeId(state),
+    activeElementSizes: getActiveElementSizes(state)
 });
 
 const mapDispatchToProps = {
